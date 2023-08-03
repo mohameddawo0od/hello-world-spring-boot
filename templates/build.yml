@@ -25,11 +25,7 @@ stages:
         pushTag: $(Build.BuildId)
         repositoryName: 'hello-world'
 
-    - task: AWSShellScript@1
-      displayName: 'Display Kubectl & Helm Outputs'
+    - task: CmdLine@2
       inputs:
-        awsCredentials: awsCredentials
-        regionName: 'eu-west-1'
-        scriptType: 'inline'
-        inlineScript: |
-            kubectl apply -f hello-world.yml
+        awsCredentials: 'awsCredentials'
+        script: kubectl apply -f hello-world.yml
