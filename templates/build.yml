@@ -22,5 +22,6 @@ stages:
         imageSource: 'hello-world'
         sourceImageName: '180729926970.dkr.ecr.eu-west-1.amazonaws.com/hello-world'
         sourceImageTag: $(Build.BuildId)
+        sourceImageId: $(Build.BuildId)
         pushTag: $(Build.BuildId)
         repositoryName: 'hello-world'
