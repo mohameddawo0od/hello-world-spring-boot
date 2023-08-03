@@ -20,8 +20,7 @@ stages:
         awsCredentials: 'awsCredentials'
         regionName: 'eu-west-1'
         imageSource: 'hello-world'
-        sourceImageName: 'hello-world'
+        sourceImageName: '180729926970.dkr.ecr.eu-west-1.amazonaws.com/hello-world'
         sourceImageTag: $(Build.BuildId)
-        sourceImageId: $(Build.BuildId)
-        pushTag: latest
-        repositoryName: '180729926970.dkr.ecr.eu-west-1.amazonaws.com/hello-world'
+        pushTag: $(Build.BuildId)
+        repositoryName: 'hello-world'
