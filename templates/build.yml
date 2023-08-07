@@ -33,5 +33,4 @@ stages:
         scriptType: 'inline'
         inlineScript: |
           aws eks update-kubeconfig --region eu-west-1 --name my-cluster
-          kubectl apply -f hello-world.yml
-          kubectl get po -n ms
+          aws ecr describe-images --repository-name hello-world --query 'sort_by(imageDetails,& imagePushedAt)[*]'
