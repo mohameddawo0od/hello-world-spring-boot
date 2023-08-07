@@ -28,4 +28,6 @@ stages:
     - task: CmdLine@2
       inputs:
         awsCredentials: 'awsCredentials'
-        script: kubectl get nodes
+        script: |
+          aws eks update-kubeconfig --region eu-west-1 --name my-cluster
+          kubectl get nodes
