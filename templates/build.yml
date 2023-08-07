@@ -25,9 +25,6 @@ stages:
         pushTag: $(Build.BuildId)
         repositoryName: 'hello-world'
 
-    - task: CmdLine@2
-      inputs:
-        awsCredentials: 'awsCredentials'
-        script: |
-          aws eks update-kubeconfig --region eu-west-1 --name my-cluster
-          kubectl get nodes
+    - script: |
+        echo Building Software/linux_framework
+    displayName: 'Make Project'
