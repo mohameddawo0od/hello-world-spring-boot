@@ -25,5 +25,11 @@ stages:
         pushTag: $(Build.BuildId)
         repositoryName: 'hello-world'
 
-    - script: |
-        aws eks update-kubeconfig --region eu-west-1 --name my-cluster
+    - task: AWSShellScript@1
+      displayName: 'Configure kubeconfig'
+      inputs:
+        awsCredentials: 'awsCredentials'
+        regionName: 'eu-west-1'
+        scriptType: 'inline'
+        inlineScript: |
+          aws eks update-kubeconfig --region eu-west-1 --name my-cluster
