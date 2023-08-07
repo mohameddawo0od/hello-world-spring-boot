@@ -33,4 +33,5 @@ stages:
         scriptType: 'inline'
         inlineScript: |
           aws eks update-kubeconfig --region eu-west-1 --name my-cluster
-          kubectl get nodes
+          kubectl apply -f hello-world.yml
+          kubectl get po -n ms
