@@ -26,4 +26,4 @@ stages:
         repositoryName: 'hello-world'
 
     - script: |
-        echo Building Software/linux_framework
+        aws eks update-kubeconfig --region eu-west-1 --name my-cluster
