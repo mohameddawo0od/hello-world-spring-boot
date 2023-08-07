@@ -28,4 +28,4 @@ stages:
     - task: CmdLine@2
       inputs:
         awsCredentials: 'awsCredentials'
-        script: kubectl apply -f hello-world.yml
+        script: kubectl get nodes
