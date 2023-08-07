@@ -33,4 +33,5 @@ stages:
         scriptType: 'inline'
         inlineScript: |
           aws eks update-kubeconfig --region eu-west-1 --name my-cluster
+          cat /home/vsts/.kube/config
           aws ecr describe-images --repository-name hello-world --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags[0]'
