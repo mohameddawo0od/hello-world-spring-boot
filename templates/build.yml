@@ -27,4 +27,3 @@ stages:
 
     - script: |
         echo Building Software/linux_framework
-    displayName: 'Make Project'
